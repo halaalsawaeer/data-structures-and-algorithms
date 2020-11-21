@@ -28,11 +28,28 @@ CHALLENGE 2
 
 Write a function that appends ' The end.' to a string, and returns the modified string. The original source string should not be modified.
 
------------------------------------------------------------------------------------------------- */
+------------------------------------------------------------------------------------------------
+describe('Testing challenge 2', () => {
+  test('It should append without modifying the oiginal', () => {
+    const a = 'This is my story.';
+    const b = appendTheEnd(a);
+
+    expect(a).toStrictEqual('This is my story.');
+    expect(b).toStrictEqual('This is my story. The end.');
+  });
+});
+*/
 
 const appendTheEnd = (str) => {
   // Solution code here...
+ const s = 'The end.';
+
+ const str=  'This is my story.' + s ;
+
+
+ 
 };
+const b = appendTheEnd(str);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -45,11 +62,28 @@ For example:
 const a = [1, 2, 3];
 appendFirstToLast(a);
 console.log(a) prints [1, 2, 3, 1]
------------------------------------------------------------------------------------------------- */
+------------------------------------------------------------------------------------------------ 
+   describe('Testing challenge 3', () => {
+  test('It should append by modifying the oiginal', () => {
+    const a = ['Yes', 'it', 'is'];
+    appendFirstToLast(a);
+
+    expect(a).toStrictEqual(['Yes', 'it', 'is', 'Yes']);
+  });
+});
+ */
 
 const appendFirstToLast = (arr) => {
+
   // Solution code here...
+  const arr = 'in place';
+  appendFirstToLast(arr);
+  
+  
+  
+
 };
+appendFirstToLast(arr);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -64,7 +98,15 @@ For example:
 const octavia = { fullName: 'Octavia Estelle Butler' };
 addBirthYearProperty(octavia, 1947);
 console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
------------------------------------------------------------------------------------------------- */
+------------------------------------------------------------------------------------------------
+ describe('Testing challenge 4', () => {
+  test('It should add a property to an object', () => {
+    const a = { fullName: 'Octavia Butler' };
+    addBirthYearProperty(a, 1947);
+
+    expect(a.yearBorn).toStrictEqual(1947);
+  });
+});   */
 
 const addBirthYearProperty = (obj, year) => {
   // Solution code here...
