@@ -56,6 +56,9 @@ For example, if the input is 'Welcome', the output will be:
 const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
+  for(let i=0; i<=str.length; i++) {
+    result.push(str.slice(i));
+  }
   return result;
 };
 
@@ -69,6 +72,7 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 
 const wordsToCharList = (arr) => {
   // Solution code here...
+  return arr.split('');
 };
 
 
@@ -116,6 +120,11 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.ingredients.forEach(element => {
+    let index = element.indexOf(' ', 4)+1;
+    result.push(element.slice(index));
+  })
+
   return result;
 };
 
@@ -130,11 +139,14 @@ You may also use other string or array methods.
 const splitFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.ingredients.forEach(element => {
+    result.push(element.split(' ').slice(2).join(' '))
+  })
   return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 6 - Stretch Goal
+CHALLENGE 6 -- Stretch Goal
 
 Use the same recipe from Challenge 3, above.
 
