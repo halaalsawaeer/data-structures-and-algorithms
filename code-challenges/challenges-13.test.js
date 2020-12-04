@@ -59,6 +59,7 @@ For example, (123) 456-7890 returns 1234567890
 
 const standardizePhoneNumbers = (arr) => {
   // Solution code here...
+  return arr.map(str => str.match(/\d/g).join(''));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -81,6 +82,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 
 const allHappy = (arr) => {
   // Solution code here...
+  return arr.every(str => str.includes(':)'));
 };
 
 /* ------------------------------------------------------------------------------------------------
