@@ -19,41 +19,27 @@ let $ = createSnippetWithJQuery(`
 
 const changeAllClassNames = () => {
   // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
 Write a function named sortBackwards that takes in an array of numbers and returns the same array, with the numbers sorted, highest to smallest.
-describe('Testing challenge 2', () => {
-  test('It should sort high-to-low the numbers in an array', () => {
-    const nums = [3,4,5,6,7];
-    expect(sortBackwards(nums)).toStrictEqual([7,6,5,4,3]);
-    expect(sortBackwards([3,2,1])).toStrictEqual([3,2,1]);
-    expect(sortBackwards([12,20,3])).toStrictEqual([20, 12, 3]);
-    expect(sortBackwards([])).toStrictEqual([]);
-    expect(sortBackwards([1])).toStrictEqual([1]);
-  });
-});
 ------------------------------------------------------------------------------------------------ */
 
 const sortBackwards = (arr) => {
- 
-
   // Solution code here...
-  const arr = [3,4,5,6,7];
-  arr.sort(function(a, b) {
-  return b - a;
-});
+  arr.sort((num1, num2) => {
 
-   
-  
+    return num2 - num1;
 
+  });
 
-
+  return arr;
 
 };
-console.log(arr);
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -66,6 +52,18 @@ For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 
 const alphabetize = (arr) => {
   // Solution code here...
+  arr.sort((word1, word2) => {
+
+    if (word1 > word2) {
+      return 1;
+
+    } else {
+      return -1;
+    }
+
+  });
+
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,6 +74,20 @@ Write a function named sortByLength that takes in an array of strings and return
 
 const sortByLength = (arr) => {
   // Solution code here...
+  arr.sort((a, b) => {
+
+    if (a.length > b.length) {
+      return 1;
+
+    } else {
+      return -1;
+
+    }
+
+  });
+
+  return arr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -153,6 +165,35 @@ If two people have the same full name, the younger one should come first. Do not
 
 const sortPeopleBetter = (arr) => {
   // Solution code here...
+  arr.sort((person1, person2) => {
+
+    if (person1.lastName > person2.lastName) {
+      return 1;
+
+    } else if (person1.lastName < person2.lastName){
+      return -1;
+
+    } else {
+
+      if (person1.firstName > person2.firstName) {
+        return 1;
+
+      } else if (person1.firstName < person2.firstName){
+        return -1;
+
+      } else {
+
+        if (person1.age > person2.age) {
+          return 1;
+
+        } else if (person1.age < person2.age){
+          return -1;
+        }
+      }
+    }
+  });
+
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -179,6 +220,7 @@ const meetings = [
 
 const sortMeetingsByDay = (arr) => {
   // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
