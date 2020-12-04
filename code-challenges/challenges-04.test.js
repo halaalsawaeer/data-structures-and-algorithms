@@ -23,7 +23,11 @@ let $ = createSnippetWithJQuery(`
 `);
 
 const generateSubmitButton = () => {
+
   // Solution code here...
+
+  
+  
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -39,21 +43,9 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-
   // Solution code here...
-
-  let reg1 = /[0-9]/g;
-  let reg2 = reg1.test(input);
-  input.forEach(item=>{
-    if(reg2==true) {
-      return true;
-    }
-    else {return false} 
-  })
-  
-      
-   
- 
+  const regex = /\d/gi;
+  return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -66,10 +58,14 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
-   let regex1 = /[A-Z]/g;
+  const findCapilized = /[A-Z][a-z]*/g;
+  let found = str.match(findCapilized);
 
-   let res1 = regex1.test(str);
-   return res1 ;
+  if (found) {
+    return found;
+  } else {
+    return [];
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -79,12 +75,7 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-
   // Solution code here...
-  let regex8 = /[A-J]/g;
-  let res1 = regex8.test(arr);
-  return res1 ;
-
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -101,6 +92,9 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
+  const test = /^[oO](ct(ober)?)$/;
+  return test.test(input);
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -115,6 +109,9 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 
 const noPunctuation = str => {
   // Solution code here...
+  const test = /[a-zA-Z0-9]*\b\s/g;
+  const found = str.match(test);
+  return found;
 };
 
 /* ------------------------------------------------------------------------------------------------
